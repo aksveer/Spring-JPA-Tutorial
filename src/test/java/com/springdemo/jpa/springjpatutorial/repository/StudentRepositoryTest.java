@@ -4,7 +4,6 @@ import com.springdemo.jpa.springjpatutorial.entity.Guardian;
 import com.springdemo.jpa.springjpatutorial.entity.Student;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
@@ -70,6 +69,25 @@ public class StudentRepositoryTest {
     @Test
     public void printStudentByEmailId(){
         System.out.println(studentRepository.getStudentByEmailAddress("Akshay@gmail.com"));
+    }
+
+    @Test
+    public void printGetStudentByEmailAddressNative(){
+        Student student = studentRepository.getStudentByEmailAddressNative(
+                "Akshay@gmail.com");
+        System.out.println("Student is :" + student);
+    }
+
+    @Test
+    public void printGetStudentByEmailAddressNativeNamedParam(){
+        Student student = studentRepository.getStudentByEmailAddressNative(
+                "Akshay@gmail.com");
+        System.out.println("Student is :" + student);
+    }
+
+    @Test
+    public void testUpdateStudentNameByEmailId(){
+        studentRepository.updateStudentNameByEmailId("Akshay Veer", "Akshay@gmail.com");
     }
 
 }
