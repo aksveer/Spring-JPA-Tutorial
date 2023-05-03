@@ -17,13 +17,13 @@ public class CourseMaterialRepositoryTest {
     @Test
     public void saveCourseMaterial(){
         Course course = Course.builder()
-                .courseTitle("DSA")
+                .courseTitle("Python")
                 .credit(6)
                 .build();
 
         CourseMaterial courseMaterial = CourseMaterial.builder()
                 .course(course)
-                .url("www.google.com")
+                .url("www.akshay.com")
                 .build();
 
         courseMaterialRepository.save(courseMaterial);
